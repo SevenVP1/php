@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-10 px-sm-2 px-0 bg-dark">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span class="fs-5 d-none d-sm-inline">Menu</span>
@@ -13,22 +13,11 @@
                     </li>
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">phanLoai</span> </a>
-                            <?php
-                                
-                                $productModel = new ProductModel();  
-                                $result = $productModel->getRecords("tblcategories_product");
-                                echo  '<ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">';
-                                while ($row = mysqli_fetch_assoc($result)){
-                                $categoryName = $row['category_name'];
-                                $categoryLink = $row['category_link'];
-                                echo "<li><a href=\"$categoryLink\" class=\"nav-link px-0\"> 
-                                <span class=\"d-none d-sm-inline\">$categoryName</span> </a> </li>";
-                            }
-                            
-                        
-                        ?>
-
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                            </li>
                             <li>
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
                             </li>
@@ -77,7 +66,7 @@
                 <div class="dropdown pb-4">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">Winner</span>
+                        <span class="d-none d-sm-inline mx-1">loser</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                         <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -91,6 +80,14 @@
                 </div>
             </div>
         </div>
-      
+        <div class="col py-3">
+            <h3>Left Sidebar with Submenus</h3>
+            <p class="lead">
+                An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single 
+                menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.</p>
+            <ul class="list-unstyled">
+                <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
+            </ul>
+        </div>
     </div>
 </div>
