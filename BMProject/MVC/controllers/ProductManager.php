@@ -20,5 +20,33 @@ class ProductManager extends Controllers{
             $this->view("master",["Page"=>"getProductsbyBand","Products"=>$products]);
         }
     }
+    function getProductsbyYear(){
+        $this->view("master",["Page"=>"getProductsbyYear"]);
+    }
+
+    public function displayProductByYear(){
+        if(isset($_POST["btSearchYear"])){
+            $year = $_POST["selectYear"];
+            $tblname ="tblproduct";
+            $_field = "year";
+            $products = $this->producModel->getRecordsbyField($tblname,$_field,$year);
+            $this->view("master",["Page"=>"getProductsbyYear","Products"=>$products]);
+        }
+    }
+    function getProductsbyYearAndBand(){
+        $this->view("master",["Page"=>"getProductsbyYearAndBand"]);
+    }
+
+    public function displayProductByYearAndBand(){
+        if(isset($_POST["btSearchYear"])){
+            $year = $_POST["selectYear"];
+            $band = $_POST["selectBand"];
+            $tblname ="tblproduct";
+            $_field1 = "year";
+            $_field2 = "band";
+            $products = $this->producModel->getRecordsbyField1($tblname,$_field1,$year,$_field2,$band);
+            $this->view("master",["Page"=>"getProductsbyYearAndBand","Products"=>$products]);
+        }
+    }
 }
 ?>

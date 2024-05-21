@@ -2,18 +2,28 @@
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             $newAction ="";
         }else{
-            $newAction = "displayProductByBand";
+            $newAction = "displayProductByYearAndBand";
         }
         
         ?>
 
-
-
-
-
-
 <form method="post" action="<?php echo $newAction ?>">
 <h1>Select Band</h1> 
+    <div class="mb-3">
+            <label for="" class="form-label">Select Year</label>
+            <select
+                class="form-select form-select-lg"
+                name="selectYear"
+                id=""
+            >
+            <?php
+            for($year = 2010;$year<=2020;$year++){
+                echo '<option value="'.$year.'">'.$year.'</option>';
+            }
+            ?>
+            </select>
+        </div>
+        <h2>Select Band</h2> 
     <div class="mb-3">
             <label for="" class="form-label">Select Band</label>
             <select
@@ -22,7 +32,7 @@
                 id=""
             >
                 <option value="Ibuprofen">Ibuprofen</option>
-                <option value="ALPRAZOLAM">ALPRAZOLAM</option>
+                <option value="Upper GI Restoration">Upper GI Restoration</option>
                 <option value="Acetaminophen">Acetaminophen</option>
                 <option value="ibuprofen">ibuprofen</option>
             </select>
@@ -31,10 +41,11 @@
         <button
             type="submit"
             class="btn btn-primary"
-            name ="btSearch"
+            name ="btSearchYear"
         >
             Submit
         </button>
+
         <?php if(isset($data["Products"])){
             echo "<table>";
             echo "<tbody>";
