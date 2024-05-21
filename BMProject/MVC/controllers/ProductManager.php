@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
 class ProductManager extends Controllers{
     public $producModel;
     public function __construct(){
@@ -58,9 +61,11 @@ class ProductManager extends Controllers{
             $company = $_POST["company"];
             $year = $_POST["year"];
             $band = $_POST["band"];
-            if(isset($_FILES['pimage'])&&$_FILES['pimage']['error']===UPLOAD_ERR_OK){
+            if(isset($_FILES['pimage'])&&$_FILES['pimage']['error'] === UPLOAD_ERR_OK){
                 $pimage = 'data:image/png;base64,'.base64_encode(file_get_contents($_FILES['pimage']['tmp_name']));
             }
+            $result = $this->producModel->insertProduct($id,$pname,$company,$year,$band,$pimage);
+            $this->view("master",["Page"=>"insertProduct","result"=>$result]);
             
         }
     }

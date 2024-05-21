@@ -8,7 +8,7 @@
         
         ?>
 
-<form method="post" action="<?php echo $newAction ?>">
+<form method="post" enctype="multipart/form-data" action="<?php echo $newAction ?>">
 <?php
 if(isset($data["result"])){
     if($data["result"]){
