@@ -11,7 +11,7 @@ class CustomerController extends Controller
         return view('customer');
     }
     public function login(){
-        $name ="Nguyễn Minh Anh!";
+        $name ="Lê Văn Xuân!";
         return view('login')->with('name',$name); 
     }
 }

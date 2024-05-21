@@ -48,5 +48,22 @@ class ProductManager extends Controllers{
             $this->view("master",["Page"=>"getProductsbyYearAndBand","Products"=>$products]);
         }
     }
+    function impinsertProduct(){
+        $this->view("master",["Page"=>"insertProduct"]);
+    }
+    public function insertProduct(){
+        if(isset($_POST["btnInsert"])){
+            $id = $_POST["id"];
+            $pname = $_POST["pname"];
+            $company = $_POST["company"];
+            $year = $_POST["year"];
+            $band = $_POST["band"];
+            $tblname ="tblproduct";
+            $_field1 = "year";
+            $_field2 = "band";
+            $products = $this->producModel->getRecordsbyField1($tblname,$_field1,$year,$_field2,$band);
+            $this->view("master",["Page"=>"getProductsbyYearAndBand","Products"=>$products]);
+        }
+    }
 }
 ?>

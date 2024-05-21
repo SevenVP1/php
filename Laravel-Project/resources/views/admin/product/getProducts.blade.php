@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('Content')
-@foreach($products as $product)
+
 <div
     class="table-responsive"
 >
@@ -21,6 +21,7 @@
             </thead>
     </table>
 </div>
+@foreach($products as $product)
 <div
     class="table-responsive"
 >
