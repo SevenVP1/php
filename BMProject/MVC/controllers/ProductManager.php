@@ -58,11 +58,10 @@ class ProductManager extends Controllers{
             $company = $_POST["company"];
             $year = $_POST["year"];
             $band = $_POST["band"];
-            $tblname ="tblproduct";
-            $_field1 = "year";
-            $_field2 = "band";
-            $products = $this->producModel->getRecordsbyField1($tblname,$_field1,$year,$_field2,$band);
-            $this->view("master",["Page"=>"getProductsbyYearAndBand","Products"=>$products]);
+            if(isset($_FILES['pimage'])&&$_FILES['pimage']['error']===UPLOAD_ERR_OK){
+                $pimage = 'data:image/png;base64,'.base64_encode(file_get_contents($_FILES['pimage']['tmp_name']));
+            }
+            
         }
     }
 }
