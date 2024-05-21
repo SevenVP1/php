@@ -105,7 +105,7 @@ if(isset($data["result"])){
         </div>
         <div>
             <label for="" class="form-label">choose image:</label>
-                <input type="file" name="pimage" class="form-control">
+                <input type="file" name="image" class="form-control">
 </div>
         
   <button

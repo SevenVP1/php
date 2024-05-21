@@ -14,9 +14,9 @@ class ProductModel extends dbProduct
         $sql ="SELECT * FROM $tblname where $field1 = '$keyword1' AND $field2 = '$keyword2'";
         return mysqli_query($this->con,$sql);
     }
-    public function insertProduct($id,$pname,$company,$year,$band,$pimage){
+    public function insertProduct($id,$pname,$company,$year,$band,$image){
         $result = false;
-        $sql = "insert into tblProduct(pid,pname,company,year,band,pimage) values('$id','$pname','$company','$year','$band','$pimage')";
+        $sql = "insert into tblProduct(pid,pname,company,year,band,pImage) values('$id','$pname','$company','$year','$band','$image')";
         if(mysqli_query($this->con,$sql)){
             $result = true;
         }
