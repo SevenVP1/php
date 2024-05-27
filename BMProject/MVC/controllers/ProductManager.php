@@ -66,7 +66,6 @@ class ProductManager extends Controllers{
             }
             $result = $this->producModel->insertProduct($id,$pname,$company,$year,$band,$image);
             $this->view("master",["Page"=>"insertProduct","result"=>$result]);
-            
         }
     }
 }
