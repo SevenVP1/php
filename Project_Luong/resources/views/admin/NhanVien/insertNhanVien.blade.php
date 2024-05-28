@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 ?>
 
-<form method="post" action="<?php $newAction ?>">
+<form method="post" action="<?php echo $newAction ?>">
 <?php
 if(isset($data["result"])){
     if($data["result"]){

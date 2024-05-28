@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 Route::get('/NhanVien','App\Http\Controllers\NhanVienController@getNhanVien');
 Route::get('/ThemNhanVien','App\Http\Controllers\NhanVienController@impinsertNhanVien');
+Route::get('/insertNhanVien','App\Http\Controllers\NhanVienController@insertNhanVien');
+Route::get('/DanhSachLuong','App\Http\Controllers\DanhSachLuongController@getDanhSachLuong');

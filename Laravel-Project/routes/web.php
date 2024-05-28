@@ -22,5 +22,12 @@ Route::get('/greeting', function () {
     return view('greeting',['name'=>'James']);
 });
 Route::get('/customer','App\Http\Controllers\CustomerController@index');
-Route::get('/customer/login','App\Http\Controllers\CustomerController@login');
-Route::get('/admin/product/getProducts','App\Http\Controllers\ProductsController@getProducts');
+Route::get('/login','App\Http\Controllers\CustomerController@login');
+Route::get('/getProducts','App\Http\Controllers\ProductsController@getProducts');
+Route::get('/getProductsByBand','App\Http\Controllers\ProductsController@getProductsbyBand')->name('admin.product.getProductsByBand');
+Route::get('updateProduct/{pid}','App\Http\Controllers\ProductsController@editProduct');
+Route::post('updateProduct/{pid}','App\Http\Controllers\ProductsController@updateProduct');
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'product'],function(){});
+Route::group(['prefix'=>'product'],function(){});
+});
