@@ -40,6 +40,12 @@ class ProductsController extends Controller
             $product->pimage = $pimage;
         }
         $product->save();
-        return redirect('./updateProduct/'.$pid)->with("Note","Sửa thành công");
+        return redirect('updateProduct/'.$pid)->with("Note","Sửa thành công");
     }
+    function deleteProduct($pid){
+        $product = ProductModel::where('pid',$pid)->first();
+        $product->delete();
+        return redirect('getProducts')->with("Note","Xóa thành công");
+    }
+    
 }

@@ -1,6 +1,10 @@
 @extends('layout.master')
 @section('Content')
-
+@if(session('Note'))
+<div class="alert alert-success">
+    {{session('Note')}}
+</div>
+@endif
 <div
     class="table-responsive"
 >

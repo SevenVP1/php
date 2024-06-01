@@ -11,7 +11,7 @@
                 id=""
             >
                 <option value="CAVALIER">CAVALIER</option>
-                <option value="ALPRAZOLAM">ALPRAZOLAM</option>
+                <option value="Theophylline">Theophylline</option>
                 <option value="Acetaminophen">Acetaminophen</option>
                 <option value="ibuprofen">ibuprofen</option>
             </select>

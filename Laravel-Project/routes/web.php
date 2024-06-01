@@ -27,6 +27,7 @@ Route::get('/getProducts','App\Http\Controllers\ProductsController@getProducts')
 Route::get('/getProductsByBand','App\Http\Controllers\ProductsController@getProductsbyBand')->name('admin.product.getProductsByBand');
 Route::get('updateProduct/{pid}','App\Http\Controllers\ProductsController@editProduct');
 Route::post('updateProduct/{pid}','App\Http\Controllers\ProductsController@updateProduct');
+Route::get('deleteProduct/{pid}','App\Http\Controllers\ProductsController@deleteProduct');
 Route::group(['prefix'=>'admin'],function(){
     Route::group(['prefix'=>'product'],function(){});
 Route::group(['prefix'=>'product'],function(){});

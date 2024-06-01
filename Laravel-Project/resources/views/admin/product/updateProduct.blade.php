@@ -50,7 +50,6 @@
                     class="form-select form-select-lg"
                     name="band"
                     id=""
-                    value="{{$product->band}}"
                 >
                     <option selected>Select one</option>
                     <option value="CAVALIER">CAVALIER</option>
@@ -64,7 +63,6 @@
                 class="form-select form-select-lg"
                 name="year"
                 id=""
-                value="{{$product->year}}"
             >
             <?php
             for($year = 2010;$year<=2020;$year++){

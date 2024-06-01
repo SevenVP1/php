@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class DanhSachLuongController extends Controller
 {
-    function getDanhSachLuong(){
+    function DanhSachLuong(){
         $danhsachs = DanhSachLuongModel::paginate(10);
-        return view('admin.DanhSachLuong.getDanhSach',['danhsachs'=>$danhsachs]);
+        return view('admin.DanhSachLuong.DanhSach',['danhsachs'=>$danhsachs]);
     }
 }

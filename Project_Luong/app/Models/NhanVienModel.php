@@ -10,17 +10,11 @@ class NhanVienModel extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table  = "tblNV";
-
+    protected $primaryKey ='nid';
+    public $incrementing = false;
+    protected $keyType = 'string';
     public function belongtoChamCong(){
-        return $this->belongsTo(ChamCongModel::class,'nid','cid');
-    }
-    public function insertNhanVien($id,$ten,$tuoi,$gioitinh,$diachi,$dienthoai){
-        $result = false;
-        $sql = "insert into tblNV(nid,ten,tuoi,gioitinh,diachi,dienthoai) values('$id','$ten','$tuoi','$gioitinh','$diachi','$dienthoai')";
-        if(mysqli_query($this->con,$sql)){
-            $result = true;
-        }
-        return json_decode($result);
+        return $this->belongsTo(ChamCongModel::class,'nid','nid');
     }
 
 }
